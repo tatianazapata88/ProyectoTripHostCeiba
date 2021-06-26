@@ -1,0 +1,28 @@
+
+<div class="body"></div>
+		<div class="grad"></div>
+		<div class="header">
+			<div>TRIP<span>HOST</span></div>
+		</div>
+		<br>
+		<div class="login">
+				<input type="text" placeholder="username" id="username" name="username" 
+                [(ngModel)]="user.username" required><br>
+				<input type="password"placeholder="Password" id="password" name="password"
+                [(ngModel)]="user.password" required><br><br>
+				<a  class="btn btn-primary btn-md btn-fill" role="button" aria-pressed="true" (click)="login()" >Ingresar</a>
+                <br><br>
+               <!-- <a  class="btn btn-info btn-md btn-fill" role="button" aria-pressed="true" (click)="loginhost()">Ingresar Host</a>
+                <br><br>br
+                <a routerLink="/sign" >Crear Cuenta</a>-->
+            
+                <button class="btn btn-primary btn-fill btn-rounded" type="button" [routerLink]="['/sign']">Crear Usuario</button>
+                    
+                
+                
+                   
+		</div>
+
+
+        
+

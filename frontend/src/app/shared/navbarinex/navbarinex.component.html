@@ -1,0 +1,13 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a href="" routerLink="/guest" class="nav-link" *ngIf="!usuarioLogueado">Login</a>
+          <a (click)="logout()" class="nav-link" style="cursor: pointer;" *ngIf="usuarioLogueado" >Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+

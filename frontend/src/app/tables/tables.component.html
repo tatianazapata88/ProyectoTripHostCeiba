@@ -1,0 +1,59 @@
+
+
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Historial de Reservas de tus Viajes como Guest</h4>
+                        <p class="category">Recuerda los maravillosos sitios que visitaste</p>
+                    </div>
+                    <div class="content table-responsive table-full-width">
+                        <div *ngIf="reserves?.length==0" class="alert alert-info">
+                            No tienes lugares reservados.
+                        </div>
+                          <table class="table table-hover table-striped" *ngIf="reserves?.length>0">
+                                <thead>
+                                    <tr>
+                                        <th>Id Reserva</th>
+                                        <th>Usuario Host</th>
+                                        <th>Codigo Casa</th>
+                                        <th>Fecha Inicial</th>
+                                        <th>Fecha Final</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let reserve of reserves">
+                                        <td>{{reserve.idReserve}}</td>
+                                        <td>{{reserve.usernameHost}}</td>
+                                        <td>{{reserve.idHouse}}</td>
+                                        <td>{{reserve.fechaInit}}</td>
+                                        <td>{{reserve.fechaEnd}}</td>
+                                        
+                                        <td>
+                                            <button type="button"  class="btn btn-info btn-fill" (click)="ver(reserve.idHouse)">Ver Casa</button>
+                                        </td>
+                                        <td>
+                                            <button type="button"  class="btn btn-default btn-fill" (click)="eliminar(reserve.idReserve)">Cancelar Reserva</button>
+                                        </td>
+                                        <td>    
+                                            <button type="button" class="btn btn-success btn-fill" [routerLink]="['/rate', reserve.idHouse]" >Calificar Casa</button>
+                                        </td> 
+                                           
+                                             
+                                            <!--<button type="button" class="btn btn-success btn-fill" (click)="calificar(reserve.usernameHost)">Calificar Host</button>
+                                             <bar-rating [max]="5" [(rate)]="currentRate" [readOnly]="false"></bar-rating>
+                                        </td>     
+                                            -->
+                                    </tr>
+                                </tbody>
+                          </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

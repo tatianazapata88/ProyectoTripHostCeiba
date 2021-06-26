@@ -1,0 +1,75 @@
+<div class="main-content" >
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Calificar Casa Host</h4>
+                    </div>
+                    <div class="content">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>ID Casa</label>
+                                        <input type="text" class="form-control invisible"  id="idGuest" name="idGuest" [(ngModel)]="idGuest" required>
+                                        <input type="text" class="form-control" disabled  id="idHouse" name="idHouse" [(ngModel)]="this.rate.idHouse" required>
+                                    </div>
+                                </div>  
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Estrellas de la experiencia</label>
+                                        <hr>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value=1 [(ngModel)]="note"> *
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value=2 [(ngModel)]="note"> **
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value=3 [(ngModel)]="note">*** 
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value=4 [(ngModel)]="note"> ****
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value=5 [(ngModel)]="note">***** 
+                                        </label>
+                                    </div>
+                                </div>        
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Comentario</label>
+                                        <textarea name="comentarioGues" class="form-control" id="comentarioGuest" cols="30" rows="10" placeholder="Comentarios de la experiencia" [(ngModel)]="comentarioGuest" required></textarea>
+                                    </div>
+                                </div>  
+                            </div>     
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Foto Experiecia</label>
+                                        <input type="text" placeholder="URL Foto Experiencia" class="form-control" id="photoExpGuest" name="photoExpGuest" [(ngModel)]="photoExpGuest"><br><br>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                           <button type="submit" class="btn btn-info btn-fill" (click)="calificar()">Calificar Casa Host</button> 
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card card-user">
+                    <div class="imagen">
+                        <img src="{{photoExpGuest}}" alt="">
+                     </div>
+                </div>
+            </div>
+        </div>
+</div>
+
+

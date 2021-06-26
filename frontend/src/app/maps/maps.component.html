@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="titulo center">
+        <h3>Confirma tu ubicacion</h3>
+    </div>
+    <div class="row center"> 
+        <div class="col-md-4">
+            <input type="text" class="form-control" placeholder="Encuentra la direccion" aria-label="" aria-describedby="origin-input" id="origin-input" name="origin-input">
+        </div>
+        <div class="col-md-4">
+            <button class="btn btn-outline-secondary" type="button" id="buscarhost">Buscar</button>
+        </div>
+    </div>
+</div>
+
+<div class="main-content">
+    
+         <!-- <ngui-map zoom="10" style="margin-top:200px;height: 100%; width: 100%; position: absolute;top: 0px;
+    left: 0px;
+    background-color: rgb(229, 227, 223);">
+              <marker [position]="[mapOptions]" id="map"></marker>
+          </ngui-map>-->
+          <ngui-map [options]="mapOptions" style="margin-top:200px;height: 50%; width: 50%; position: absolute;top: 0px;left: 0px;background-color: rgb(229, 227, 223);"
+    (mapReady$)="onMapReady($event)"
+    (mapClick)="onMapClick($event)"
+    (idle)="onIdle($event)"  id="map">
+              <marker *ngFor="let pos of positions"
+              [position]="pos"
+              (initialized$)="onMarkerInit($event)"></marker>
+           
+          
+
+          </ngui-map>
+
+
+</div>

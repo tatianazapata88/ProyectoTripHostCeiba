@@ -1,0 +1,5 @@
+com\ias\backend\infrastucture\controllers\UserController.class
+com\ias\backend\repository\UserRepository.class
+com\ias\backend\BackendApplication.class
+com\ias\backend\infrastucture\controllers\RegisterController.class
+com\ias\backend\domain\User.class

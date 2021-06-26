@@ -1,0 +1,80 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6" style="align-content: center">
+                <div class="card">
+                    <br>
+                    <div>
+                        <h4 class="title">{{tittle}}</h4>
+                    </div>
+                    <div class="content">
+                        <form (ngSubmit)="sign()">
+                            <div class="form-group row">
+                                <label for="username" class="col-form-label col-sm-2">UserName</label>
+                                <div class="col-sm-6">
+                                    <input type="text" placeholder="username" id="username" name="username" [(ngModel)]="user.username" required>
+                                </div>
+                            </div>
+                            <div class="form-group row align-center">
+                                <label for="password" class="col-form-label col-sm-2">Password</label>
+                                <div class="col-sm-6">
+                                    <input type="password" placeholder="Password" id="password" name="password" [(ngModel)]="user.password" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="name" class="col-form-label col-sm-2">Nombres y Apellidos</label>
+                                <div class="col-sm-6">
+                                    <input type="text" placeholder="Nombre Completo" id="name" name="name" [(ngModel)]="user.name" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="userCountry" class="col-form-label col-sm-2">Pais</label>
+                                <div class="col-sm-6">
+                                    <input type="text" placeholder="Pais" id="userCountry" name="userCountry" [(ngModel)]="user.userCountry" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="userCity" class="col-form-label col-sm-2">Ciudad</label>
+                                <div class="col-sm-6">
+                                    <input type="text" placeholder="Ciudad" id="userCity" name="userCity" [(ngModel)]="user.userCity" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="address" class="col-form-label col-sm-2">Dirección</label>
+                                <div class="col-sm-6">
+                                    <input type="text" placeholder="Dirección" id="address" name="address" [(ngModel)]="user.address">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="address" class="col-form-label col-sm-2">Escoje tu rol</label>
+                                    <div class="col-sm-6">
+                                        <select class="form-control" id="rol" name="rol"  [(ngModel)]="user.rol" >
+                                            <option value="1">Guest Viajero</option>
+                                            <option value="2">Host Hospedador</option>
+                                            <option value="3" selected>Guest y Host</option>
+                                        </select>
+                                    </div>
+                            </div>
+                            <div class="form-group row content-align-center">
+                                <div>
+                                    <button class="btn btn-primary btn-fill" role="button">Crear Usuario</button>
+                                    <button class="btn btn-default btn-fill" type="button" [routerLink]="['/guest']">Regresar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div> 
+            </div>   
+            <div class="col-md-2 center" >
+                <div>
+                    <img src="assets/img/carrusel1.jpg" alt="">
+                 </div>
+            </div>
+        </div>        
+    </div>
+</div>
+
+        
+           
+
+

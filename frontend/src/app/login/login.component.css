@@ -1,0 +1,54 @@
+.pantalla-dividida{
+    margin: 0;
+    padding: 0;
+
+}
+
+.izquierda{
+    background-image:url(assets/img/happy-tourist-sightseeing-city-with-map.jpg);
+    background-color: transparent;
+    background-size: cover;
+    height: 90vh;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    
+    
+}
+
+.derecha{
+    background-image: url(assets/img/family-moving-using-boxes.jpg);
+    background-color: transparent;
+    background-size: cover;
+    height: 90vh;
+    
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+   
+ 
+}
+
+.texto{
+  
+    text-align: center;
+    color: black;
+    font-size: 52px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 58px;
+    
+}
+
+#pantalla-dividida{
+    display: flex;
+    align-items: center;
+}
+
+.titulo{
+    text-align: center;
+}

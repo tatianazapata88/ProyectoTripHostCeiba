@@ -1,0 +1,152 @@
+<div class="main-content" >
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Editar Perfil</h4>
+                    </div>
+                    <div class="content">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label>UserName</label>
+                                      <!--  <input type="text" class="form-control" disabled value="{{username}}" id="username" name="username" [(ngModel)]="username" required>
+                                        <input type="number" class="form-control invisible" value="{{id}}" id="id" name="id" [(ngModel)]="id" required>   -->
+                                        <input type="text" class="form-control" disabled  id="username" name="username" [(ngModel)]="user.username" required>
+                                        <input type="number" class="form-control invisible"  id="id" name="id" [(ngModel)]="user.id" required>
+                                    </div>
+                                </div>
+                            </div>   
+                           
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                   <div class="form-group">
+                                        <label>Nombre Completo y Apellidos</label>
+                                        <!--<input type="text" class="form-control" placeholder="Nombre Completo y Apellidos" id="name" name="name" [(ngModel)]="name" required>-->
+                                     <input type="text" class="form-control" placeholder="Nombre Completo y Apellidos" id="name" name="name" [(ngModel)]="user.name" required>
+                                    
+                                    </div>
+                                </div>    
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label>Password</label>
+                                       <!-- <input type="text" class="form-control" placeholder="Password" id="password" name="password" [(ngModel)]="password" required>-->
+                                        <input type="text" class="form-control" placeholder="Password" id="password" name="password" [(ngModel)]="user.password" required>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Pais</label>
+                                      <!--  <input type="text" class="form-control" placeholder="Pais" id="userCountry" name="userCountry" [(ngModel)]="userCountry" required>-->
+                                        <input type="text" class="form-control" placeholder="Pais" id="userCountry" name="userCountry" [(ngModel)]="user.userCountry" required>
+                                   
+                                    </div>
+                                   
+                                </div>
+                               <!-- <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Departamento</label>
+                                        <input type="text" class="form-control" placeholder="Departamento" id="dep" name="dep" [(ngModel)]="dep" required>
+                                    </div>  
+                                </div>-->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Ciudad</label>
+                                        <!--<input type="text" class="form-control" placeholder="Ciudad" id="userCity" name="userCity" [(ngModel)]="userCity" required >-->
+                                        <input type="text" class="form-control" placeholder="Ciudad" id="userCity" name="userCity" [(ngModel)]="user.userCity" required >
+                                    
+                                    </div>  
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Direccion</label>
+                                       <!-- <input type="text" class="form-control" placeholder="Direccion" id="address" name="address" [(ngModel)]="address" required >-->
+                                        <input type="text" class="form-control" placeholder="Direccion" id="address" name="address" [(ngModel)]="user.address" required >
+                                   
+                                    </div>
+                                </div>
+                            </div>
+                              <!--  <div class="row"> 
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Barrio</label>
+                                            <input type="text" class="form-control" placeholder="Barrio" id="barrio" name="barrio" [(ngModel)]="barrio" required >
+                                        </div>
+                                    </div>-->
+                                   <!-- <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Email</label>
+                                            <input type="email" class="form-control" placeholder="Email" id="email" name="email" [(ngModel)]="email" required >
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row"> 
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Telefono</label>
+                                            <input type="text" class="form-control" placeholder="Telefono" id="phone" name="phone" [(ngModel)]="phone" required >
+                                        </div>
+                                    </div>-->
+                            <div class="row">         
+                                <div class="col-md-6">
+                                    <div class="col-auto form-row align-items-center">
+                                        <label  for="rol">Acesso</label>
+                                        <!--<select class="form-control" id="rol" name="rol" [(ngModel)]="rol"></select>-->
+                                            <select class="form-control" id="rol" name="rol" [(ngModel)]="user.rol">
+                                              <option selected>Quiero acceder</option>
+                                              <option value="1">Guest Viajero</option>
+                                              <option value="2">Host Hospedador</option>
+                                              <option value="3">Guest y Host</option>
+                                            </select>
+                                    </div>        
+                                </div>
+                            </div>
+                                
+                            
+                            <button type="submit" class="btn btn-info btn-fill pull-right" (click)="update()">Actualizar Perfil</button>
+                            
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+         <!--   <div class="col-md-4">
+                <div class="card card-user">
+                    <div class="image">
+                        <img src="data:image/jpeg;base64,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" alt="..."/>
+                    </div>
+                    <div class="content">
+                        <br>
+                        <br>
+                        <div class="author">
+                            
+                                <img class="avatar border-gray" src="" alt="..."/>
+
+                                <h4 class="title">{{name}}<br />
+                                    <small>{{username}}</small>
+                                </h4>
+                         
+                       </div>
+                       <div class="text-center">
+                            <button href="#" class="btn btn-simple"><i class="fa fa-facebook-square"></i></button>
+                            <button href="#" class="btn btn-simple"><i class="fa fa-twitter"></i></button>
+                            <button href="#" class="btn btn-simple"><i class="fa fa-google-plus-square"></i></button>
+                        </div>
+                    </div>
+                </div>-->
+            </div>
+        </div>
+</div>
