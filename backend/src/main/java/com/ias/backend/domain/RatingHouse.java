@@ -20,6 +20,9 @@ public class RatingHouse {
     @Column(name="id_rating")
     private int idRating;
 
+    @Column(name="id_reserve")
+    private int idReserve;
+
     @Column(name="id_house")
     private int idHouse;
 
@@ -50,6 +53,14 @@ public class RatingHouse {
 
     public void setIdRating(int idRating) {
         this.idRating = idRating;
+    }
+
+    public int getIdReserve() {
+        return idReserve;
+    }
+
+    public void setIdReserve(int idReserve) {
+        this.idReserve = idReserve;
     }
 
     public int getIdHouse() {

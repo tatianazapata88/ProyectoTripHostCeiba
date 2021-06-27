@@ -55,10 +55,12 @@ export class GuestComponent implements OnInit {
         this.authService.urlUsuarioIntentAcceder = '';
         this.router.navigate([this.routeRedirect]);
      
-        
-        //console.log('posicion de data'+this.respuesta.rol)
-        //if(data[4]===2){
-         // console.log('este es lo que llega de back'+this.respuesta);
+        this.service.user=this.user
+        console.log('estos son los datos del user en service'+this.service.user)
+      this.router.navigate(['/admin/user']);
+        /*console.log('posicion de data'+this.respuesta.rol)
+        if(data[4]===2){
+          console.log('este es lo que llega de back'+this.respuesta);
         if(this.user.rol==2){
           console.log('estos son los datos usuaruio'+this.user)
          this.service.user=this.user
@@ -79,12 +81,12 @@ export class GuestComponent implements OnInit {
         }
       }
 
-    })
+    })*/
 
     }
-   
+  })
   }
+}
 
-  
 
 

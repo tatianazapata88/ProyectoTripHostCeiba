@@ -17,6 +17,7 @@ import { Rate } from './rate';
 })
 export class RateComponent implements OnInit {
    public  rate: Rate = new Rate()
+   public  reserve: Reserve = new Reserve()
   public tittle:string="Califica tu Huesped Guest"
   comentarioGuest: any;
   idGuest: any;
@@ -27,22 +28,33 @@ export class RateComponent implements OnInit {
   
 
   ngOnInit(): void {
+    this.cargarIdReserve();
     this.cargarIdHouse();
   }
 
 
-  cargarIdHouse(): void{
+  cargarIdReserve(): void{
     this.activatedRoute.params.subscribe(params =>{
-      let idHouse1 = params['idHouse']
-      if(idHouse1){
-        this.rate.idHouse=idHouse1;
-      }
-      console.log('este es el usuario que califica´'+this.service.user.id)
-      
-    })
+      let idReserve1 = params['idReserve']
     
+      if(idReserve1){
+        this.rate.idReserve=idReserve1;
+       
+
+    
+       }
+
+    })
+  }   
+    
+ cargarIdHouse() {
+    this.service.getReservebyIdReserve(this.rate.idReserve).subscribe(data => {
+      this.reserve=data
+      this.rate.idHouse=this.reserve.idHouse
+     
+    })
+  }
    
-    }
 
   calificar(){
    console.log('este es el usuario que califica´'+this.service.user.id)
@@ -53,7 +65,8 @@ export class RateComponent implements OnInit {
 
     this.service.saveRatingHouse(this.rate).subscribe(data => {
       this.rate=data
-      console.log(data);
+
+      
     }, error => alert(error));
     Swal.fire({
       position: 'top-end',
@@ -62,6 +75,14 @@ export class RateComponent implements OnInit {
       showConfirmButton: false,
       timer: 1500
     });
+    this.service.getReservebyIdReserve(this.rate.idReserve).subscribe(data => {
+      console.log(data);})
+      this.reserve.notaGuest=this.rate.note
+    this.service.updateReserve(this.reserve).subscribe(data => {
+      console.log(data);
+      this.reserve=data
+      console.log("este es la actualizacion de la reserva "+this.reserve)
+    })
     this.router.navigate(['/admin/table']);
 
 

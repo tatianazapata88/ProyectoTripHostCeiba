@@ -16,10 +16,11 @@ import { RateComponent } from 'app/rate/rate.component';
 export const AdminLayoutRoutes: Routes = [
  
     { path: 'admin',          component: HomeComponent },
+    { path: 'dashboard/:usarname',      component: HomeComponent },
     { path: 'dashboard',      component: HomeComponent },
     { path: 'reserve',        component: ReserveComponent },
     { path: 'user',           component: UserComponent },
-    { path: 'rate/:idHouse', component: RateComponent },
+    { path: 'rate/:idReserve', component: RateComponent },
     { path: 'reserve/:idHouse', component: ReserveComponent },
     { path: 'user/', component: UserComponent },
     { path: 'table',          component: TablesComponent },

@@ -1,5 +1,6 @@
 export class Rate {
     idRating: number;
+    idReserve: number;
     idHouse: number;
     idGuest: number;
     commentGuest: string;

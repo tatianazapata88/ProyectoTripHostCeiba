@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -55,6 +56,17 @@ public class ReserveController {
        return new ResponseEntity<Iterable<Reserve>>(reserveRepository.findByUsernameHost(usernameHost), HttpStatus.ACCEPTED);
    
    }
+
+   @GetMapping("/reserveId/{idReserve}")
+
+   public ResponseEntity<Reserve> getReservebyId(@PathVariable int idReserve){
+     return new ResponseEntity<Reserve>(reserveRepository.findByIdReserve(idReserve), HttpStatus.ACCEPTED);
+   }
+
+   @PutMapping("/update")
+    public ResponseEntity<Reserve> updateUser(@RequestBody Reserve reserve){
+        return new ResponseEntity<Reserve  >(reserveRepository.save(reserve), HttpStatus.ACCEPTED);
+    }
 
    @DeleteMapping(value="/eliminar/{idReserve}")
    @ResponseStatus(HttpStatus.NO_CONTENT)

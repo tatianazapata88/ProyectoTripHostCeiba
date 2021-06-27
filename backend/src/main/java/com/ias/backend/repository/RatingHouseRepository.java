@@ -9,5 +9,7 @@ import org.springframework.stereotype.Repository;
 public interface RatingHouseRepository extends CrudRepository<RatingHouse, Integer>{
 
     RatingHouse findByidHouse(String idHouse);
+
+    RatingHouse findByidReserve(int idReserve);
     
 }

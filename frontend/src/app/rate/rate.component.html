@@ -12,8 +12,9 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>ID Casa</label>
-                                        <input type="text" class="form-control invisible"  id="idGuest" name="idGuest" [(ngModel)]="idGuest" required>
-                                        <input type="text" class="form-control" disabled  id="idHouse" name="idHouse" [(ngModel)]="this.rate.idHouse" required>
+                                        <input type="text" class="form-control" disabled  id="idHouse" name="idHouse" [(ngModel)]="rate.idHouse" required>
+                                        <input type="text" class="form-control invisible"  id="idReserve" name="idReserve" [(ngModel)]="rate.idReserve" required>
+                                        <input type="text" class="form-control invisible"  id="idGuest" name="idGuest" [(ngModel)]="rate.idGuest" required>
                                     </div>
                                 </div>  
                             </div>
@@ -58,6 +59,8 @@
                             </div>
                            
                            <button type="submit" class="btn btn-info btn-fill" (click)="calificar()">Calificar Casa Host</button> 
+                           <button type="button" class="btn btn-default btn-fill" [routerLink]="['/admin/table']" >Regresar</button>
+
                         </form>
                     </div>
                 </div>

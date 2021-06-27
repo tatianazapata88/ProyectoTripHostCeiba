@@ -14,6 +14,8 @@ public interface ReserveRepository extends CrudRepository<Reserve, Integer>{
 
     Iterable<Reserve> findByUsernameHost(String usernameHost);
 
+    Reserve findByIdReserve(int idReserve);
+
 
 
    

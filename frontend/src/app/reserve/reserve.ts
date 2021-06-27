@@ -5,6 +5,8 @@ export class Reserve {
     usernameHost: string;
     fechaInit: Date;
     fechaEnd: Date;
+    notaGuest: number;
+    notaHost: number;
     
 
     constructor(){

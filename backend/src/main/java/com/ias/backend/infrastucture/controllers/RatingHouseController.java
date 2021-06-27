@@ -34,8 +34,8 @@ public class RatingHouseController {
 
   }
 
-  @GetMapping("/rate/{idHouse}")
-  public ResponseEntity<RatingHouse> getRateByidHouse(@PathVariable String idHouse) {
-      return new ResponseEntity<RatingHouse>(ratingHouseRepository.findByidHouse(idHouse), HttpStatus.ACCEPTED);
+  @GetMapping("/rate/{idReserve}")
+  public ResponseEntity<RatingHouse> getRateByidHouse(@PathVariable int idReserve) {
+      return new ResponseEntity<RatingHouse>(ratingHouseRepository.findByidReserve(idReserve), HttpStatus.ACCEPTED);
   }
 }

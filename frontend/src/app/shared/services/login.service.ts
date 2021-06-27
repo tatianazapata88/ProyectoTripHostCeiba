@@ -50,10 +50,10 @@ export class LoginService {
  
    }
 
-   getRateHouseId(idHouse): Observable <Rate>{
+   getRateReserveId(idReserve): Observable <Rate>{
     // this.idHouse=idHouse;
      
-      return  this.http.get<Rate>('http://localhost:8080/ratingHouses/rate/'+idHouse);
+      return  this.http.get<Rate>('http://localhost:8080/ratingHouses/rate/'+idReserve);
   
     }
    getUser(username): Observable <Guest>{
@@ -61,6 +61,12 @@ export class LoginService {
     
     // return  this.http.get('http://localhost:8080/users/guest/'+username).pipe(map((response)=>response as Guest));
      return  this.http.get<Guest>('http://localhost:8080/users/guest/'+username);
+   }
+
+   getReservebyIdReserve(idReserve): Observable <Reserve>{
+      
+     return  this.http.get<Reserve>('http://localhost:8080/reserves/reserveId/'+idReserve);
+ 
    }
 
    getReservebyUsernameGuest<Reserve>(usernameGuest): Observable <Reserve>{
@@ -145,6 +151,17 @@ export class LoginService {
     console.log(headers," ", body)
 
     return this.http.put<House>('http://localhost:8080/houses/updateHouse', body, {'headers':headers})
+
+  }
+
+  updateReserve(reserve: Reserve): Observable<Reserve>{
+    console.log("llega al service:", reserve)
+
+    const headers =  { 'content-type': 'application/json'};
+    const body = JSON.stringify(reserve);
+    console.log(headers," ", body)
+
+    return this.http.put<Reserve>('http://localhost:8080/reserves/update', body, {'headers':headers})
 
   }
 

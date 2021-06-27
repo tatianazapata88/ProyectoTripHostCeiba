@@ -36,6 +36,12 @@ public class Reserve {
     @Temporal(TemporalType.DATE)
     private Date fechaEnd;
 
+    @Column(name="nota_guest")
+    private int notaGuest;
+
+    @Column(name="nota_host")
+    private int notaHost;
+
     public int getIdReserve() {
         return idReserve;
     }
@@ -84,8 +90,23 @@ public class Reserve {
         this.fechaEnd = fechaEnd;
     }
 
-    
+    public int getNotaGuest() {
+        return notaGuest;
+    }
 
+    public void setNotaGuest(int notaGuest) {
+        this.notaGuest = notaGuest;
+    }
+
+    public int getNotaHost() {
+        return notaHost;
+    }
+
+    public void setNotaHost(int notaHost) {
+        this.notaHost = notaHost;
+    }
+
+    
     
    
 

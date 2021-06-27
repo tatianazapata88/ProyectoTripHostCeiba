@@ -57,15 +57,19 @@ const routes: Routes =[
   component: AdminLayoutComponent, canActivate: [CanActiveGuard],
  },
  {
+  path: 'admin/dashboard/:username',
+  component: AdminLayoutComponent, canActivate: [CanActiveGuard],
+ },
+ {
    path: 'user/:username',
  component: UserComponent, canActivate: [CanActiveGuard],
 },
 {
-  path: 'rate/:idHouse',
+  path: 'rate/:idReserve',
 component: RateComponent, canActivate: [CanActiveGuard],
 },
 {
-  path: 'admin/rate/:idHouse',
+  path: 'admin/rate/:idReserve',
 component: RateComponent, canActivate: [CanActiveGuard],
 },
  {

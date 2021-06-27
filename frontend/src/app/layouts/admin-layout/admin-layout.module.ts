@@ -7,6 +7,8 @@ import { NguiMapModule} from '@ngui/map';
 import { AdminLayoutRoutes } from './admin-layout.routing';
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { RateComponent } from 'app/rate/rate.component';
+import { MapsComponent } from 'app/maps/maps.component';
+import { AdminLayoutComponent } from './admin-layout.component';
 
 
 @NgModule({
@@ -18,6 +20,7 @@ import { RateComponent } from 'app/rate/rate.component';
     NguiMapModule.forRoot({apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyCOot306VxUoTqzKp8sm6GRosVADoWf1Ao'})
   ],
   declarations: [
+   
     
    
   ]
