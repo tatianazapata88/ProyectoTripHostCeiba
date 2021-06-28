@@ -33,43 +33,7 @@ export class ReserveComponent implements OnInit {
 
   ngOnInit() {
     this.cargarHouse();
-   // this.service.getUser(this.service.house.username).subscribe((userHost)=> this.user =userHost)
-     /* let respuesta;
-    let usernameGuest;
-    let usernameHost1;
-    let name = this.name;
-    let idHuseser = this.service.idHouse
-    let phone = this.phoneHost;
-    let photo = this.photo;
-    let housecity = this.houseCity;
-    let houseaddress = this.houseAddress;
-    let housecountry = this.houseCountry
-   console.log("este es id house de service"+idHuseser)
-    this.service.getHousebyId(this.house.idHouse).subscribe(data => {
-      this.house=data;
-      var casa : House;
-      casa=respuesta;
-      console.log("estes es idhouse:"+casa.username)
-      this.idHouse=casa.idHouse;
-      usernameHost1=casa.username
-      this.phoneHost=casa.phoneHost;
-      this.photo=casa.photo;
-      this.houseCity=casa.houseCity;
-      this.houseCountry=casa.houseCountry;
-      this.houseAddress=casa.houseAddress;
-      console.log('este es el usuaruio host'+usernameHost1)
-      this.service.getUser(usernameHost1).subscribe(data => {
-        respuesta=data;
-        var usuario : User;
-        usuario=respuesta;
-        console.log("estes es:"+usuario)
-        this.usernameHost=usuario.name;
-      });
-     });
-     
-     
-    console.log(this.service.idHouse)
-*/
+   
 }
 
   cargarHouse(): void{
@@ -86,7 +50,8 @@ export class ReserveComponent implements OnInit {
   createReserveHouse(){
     this.reserve.idHouse=this.house.idHouse
     this.reserve.usernameHost=this.house.username;
-    this.reserve.usernameGuest=this.service.user.username;
+    let recuperarStorage = JSON.parse( localStorage.getItem("datosSesion"));
+    this.reserve.usernameGuest=recuperarStorage.username;
     this.reserve.fechaInit=this.fechaInit;
     this.reserve.fechaEnd=this.fechaEnd
     this.service.saveReserve(this.reserve).subscribe(data => {

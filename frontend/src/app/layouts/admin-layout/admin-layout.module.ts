@@ -9,18 +9,20 @@ import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { RateComponent } from 'app/rate/rate.component';
 import { MapsComponent } from 'app/maps/maps.component';
 import { AdminLayoutComponent } from './admin-layout.component';
+import { HomeComponent } from 'app/home/home.component';
 
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule.forChild(AdminLayoutRoutes),
-    FormsModule,
     LbdModule,
     NguiMapModule.forRoot({apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyCOot306VxUoTqzKp8sm6GRosVADoWf1Ao'})
   ],
   declarations: [
    
+    MapsComponent,
+      
     
    
   ]

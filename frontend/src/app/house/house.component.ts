@@ -11,6 +11,7 @@ import { House } from './house';
   styleUrls: ['./house.component.css']
 })
 export class HouseComponent implements OnInit {
+  
   public  house: House = new House()
  /* available: any;
   phoneHost: any;
@@ -26,8 +27,9 @@ export class HouseComponent implements OnInit {
   constructor(private service: LoginService, private datosLogin: LoginService, private router: Router) { }
 
   ngOnInit()  {
-    let respuesta;
-    let username = this.service.user.username;
+    let recuperarStorage = JSON.parse( localStorage.getItem("datosSesion"));
+   
+    let username =recuperarStorage.username;
    // let password = this.service.password;
    this.service.getHouse(username).subscribe(data => {
       

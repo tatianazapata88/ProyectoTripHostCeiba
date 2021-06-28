@@ -71,11 +71,12 @@ export class SidebarComponent implements OnInit {
       respuesta=data;
       var usuario: Guest;
       usuario=respuesta;*/
-      console.log('este es el rol de la vista'+this.user.rol)
-      if(this.service.user.rol==1){
+      let recuperarStorage = JSON.parse( localStorage.getItem("datosSesion"));
+      this.user=recuperarStorage;
+      if(this.user.rol==1){
     this.menuItems = ROUTESGUEST.filter(menuItem => menuItem);
       }
-      else if(this.service.user.rol==2){
+      else if(this.user.rol==2){
         this.menuItems = ROUTESHOST.filter(menuItem => menuItem);
       }
       else{
@@ -92,6 +93,7 @@ export class SidebarComponent implements OnInit {
 
   logout(){
     this.authService.logout();
+    localStorage.removeItem("datosSesion")
     this.router.navigate(['/guest']);
   }
 }

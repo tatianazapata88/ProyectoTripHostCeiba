@@ -3,14 +3,11 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-
 import { AppRoutingModule } from './app.routing';
 import { NavbarModule } from './shared/navbar/navbar.module';
 import { FooterModule } from './shared/footer/footer.module';
 import { SidebarModule } from './sidebar/sidebar.module';
-
 import { AppComponent } from './app.component';
-
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { LoginComponent } from './login/login.component';
 import { NavbarinexComponent } from './shared/navbarinex/navbarinex.component';
@@ -21,7 +18,6 @@ import { HouseComponent } from './house/house.component';
 import { ReserveComponent } from './reserve/reserve.component';
 import { LoginService } from './shared/services/login.service';
 import { AuthService } from './shared/services/auth.service';
-import { BarRatingModule } from 'ngx-bar-rating';
 import { RateComponent } from './rate/rate.component';
 import { NgbModule, NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 import {NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
@@ -33,6 +29,10 @@ import { TablesComponent } from './tables/tables.component';
 import { TypographyComponent } from './typography/typography.component';
 import { UpgradeComponent } from './upgrade/upgrade.component';
 import { UserComponent } from './user/user.component';
+import {MatDatepickerModule} from '@angular/material/datepicker'
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -47,6 +47,11 @@ import { UserComponent } from './user/user.component';
     SidebarModule,
     AppRoutingModule,
     NgbModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    
    ],
   declarations: [
     AppComponent,
@@ -56,18 +61,16 @@ import { UserComponent } from './user/user.component';
     GuestComponent,
     CalculadoraComponent,
     SignComponent,
-    HomeComponent,
     HouseComponent,
     TablesComponent,
     TypographyComponent,
     IconsComponent,
-    MapsComponent,
     NotificationsComponent,
     UpgradeComponent,
     UserComponent,
     ReserveComponent,
-    RateComponent 
-    
+    RateComponent, 
+    HomeComponent
     ],
   providers: [LoginService, AuthService],
   bootstrap: [AppComponent]

@@ -1,6 +1,7 @@
 import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Guest } from 'app/guest/guest';
 import { Reserve } from 'app/reserve/reserve';
 import { LoginService } from 'app/shared/services/login.service';
 import Swal from 'sweetalert2';
@@ -13,12 +14,15 @@ import Swal from 'sweetalert2';
 })
 export class TypographyComponent implements OnInit {
     reserves: any;
+    public  user: Guest = new Guest()
     
 
   constructor(private service: LoginService, private router: Router) { }
 
   ngOnInit() {
-        this.service.getReservebyUsernameHost(this.service.user.username).subscribe(data => {
+    let recuperarStorage = JSON.parse( localStorage.getItem("datosSesion"));
+    this.user=recuperarStorage;
+        this.service.getReservebyUsernameHost(recuperarStorage.username).subscribe(data => {
         this.reserves = new Reserve;
         this.reserves=data; 
         

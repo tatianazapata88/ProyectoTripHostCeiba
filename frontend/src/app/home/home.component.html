@@ -4,16 +4,31 @@
         <h3>Encuentra tu proximo destino</h3>
     </div>
    <div class="row"> 
-        <div class="col-md-4">
+        <div class="col-md-3">
+            <label for="houseCity">Ciudad</label>
             <input type="text" class="form-control" placeholder="Ciudad"  id="houseCity" name="houseCity" [(ngModel)]="houseCity">
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
+            <label for="countryHouse">Pais</label>
             <input type="text" class="form-control" placeholder="Pais"  id="houseCountry" name="houseCountry" [(ngModel)]="houseCountry">
         </div>
+        <div class="col-md-3">
+            <label for="fechaInit">Fecha Inicial</label>
+            <input type="date" class="form-control" placeholder="Fecha Inicial"  id="fechaInit" name="fechaInit" [(ngModel)]="fechaInit">
+        </div>
+        <div class="col-md-3">
+            <label for="fechaEnd">Fecha Final</label>
+            <input type="date" class="form-control" placeholder="Fecha Final"  id="fechaEnd" name="fechaEnd" [(ngModel)]="fechaEnd">
+        </div>
+       
+    </div>
+    <br>
+    <div class="row"> 
         <div>
-            <button class="btn btn-outline-secondary" type="button" id="buscarhost" (click)="searchdis()">Buscar</button>
+            <button class="btn btn-outline-secondary pull-right" type="button" id="buscarhost" (click)="searchdis()">Buscar</button>
         </div>
     </div>
+  
     <br>
     <br>
     <div class="card mb-3" style="max-width: 540px;" *ngFor="let house of houses">

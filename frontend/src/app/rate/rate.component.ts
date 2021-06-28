@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Guest } from 'app/guest/guest';
 import { Reserve } from 'app/reserve/reserve';
 import { LoginService } from 'app/shared/services/login.service';
 import { title } from 'process';
@@ -18,13 +19,14 @@ import { Rate } from './rate';
 })
 export class RateComponent implements OnInit {
    public  rate: Rate = new Rate()
+   public  user: Guest = new Guest()
    public  reserve: Reserve = new Reserve()
   tittle: any;
   comentarioGuest: any;
   idGuest: any;
   photoExpGuest: any;
   note: any;
-  idLogin=this.service.user.id
+ 
   constructor(private service: LoginService, private activatedRoute: ActivatedRoute, private router: Router) { }
   
 
@@ -54,7 +56,9 @@ export class RateComponent implements OnInit {
     this.service.getReservebyIdReserve(this.rate.idReserve).subscribe(data => {
       this.reserve=data
       this.rate.idHouse=this.reserve.idHouse
-      if(this.reserve.usernameHost==this.service.user.username){
+      let recuperarStorage = JSON.parse( localStorage.getItem("datosSesion"));
+      this.user=recuperarStorage;
+      if(this.reserve.usernameHost==recuperarStorage.username){
         this.tittle="Califica tu Huesped"
       }
       else{
@@ -87,7 +91,9 @@ export class RateComponent implements OnInit {
     this.service.getReservebyIdReserve(this.rate.idReserve).subscribe(data => {
       console.log(data);
       this.reserve=data})
-      if(this.reserve.usernameHost==this.service.user.username){
+      let recuperarStorage = JSON.parse( localStorage.getItem("datosSesion"));
+      this.user=recuperarStorage;
+      if(this.reserve.usernameHost==recuperarStorage.username){
       this.reserve.notaGuest=this.rate.note
       
       }

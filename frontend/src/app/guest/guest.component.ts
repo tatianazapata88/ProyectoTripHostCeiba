@@ -38,7 +38,7 @@ export class GuestComponent implements OnInit {
 
     this.service.getLogin(this.user.username, this.user.password).subscribe(data => {
       this.user=data; 
-     
+      localStorage.setItem("datosSesion", JSON.stringify(data));  
        console.log('esta es la resouesta login'+this.user.rol)
       if (!this.user) {
         Swal.fire({
@@ -55,9 +55,11 @@ export class GuestComponent implements OnInit {
         this.authService.urlUsuarioIntentAcceder = '';
         this.router.navigate([this.routeRedirect]);
      
-        this.service.user=this.user
-        console.log('estos son los datos del user en service'+this.service.user)
+        //this.service.user=this.user
+        //console.log('estos son los datos del user en service'+this.service.user)
       this.router.navigate(['/admin/user']);
+
+      
         /*console.log('posicion de data'+this.respuesta.rol)
         if(data[4]===2){
           console.log('este es lo que llega de back'+this.respuesta);
