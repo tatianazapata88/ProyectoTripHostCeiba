@@ -13,7 +13,8 @@ import Swal from 'sweetalert2';
 })
 export class TablesComponent implements OnInit {
     reserves: any;
-    currentRate=0;
+   private today = new Date().getTime()
+ 
     
 
   constructor(private service: LoginService, private router: Router) { }
@@ -25,6 +26,7 @@ export class TablesComponent implements OnInit {
         
          console.log(data)
         })
+       
   }
 
   ver(idHouse1){

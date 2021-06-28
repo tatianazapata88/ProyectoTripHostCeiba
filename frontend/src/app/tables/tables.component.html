@@ -21,7 +21,7 @@
                                         <th>Codigo Casa</th>
                                         <th>Fecha Inicial</th>
                                         <th>Fecha Final</th>
-                                        <th>Tu Calificacion</th>
+                                        <th>Tu Calificacion Casa</th>
                                         <th>Acciones</th>
                                     </tr>
                                 </thead>
@@ -32,17 +32,17 @@
                                         <td>{{reserve.idHouse}}</td>
                                         <td>{{reserve.fechaInit}}</td>
                                         <td>{{reserve.fechaEnd}}</td>
-                                        <td>{{reserve.notaGuest}}</td>
+                                        <td>{{reserve.notaHost}}</td>
                                 
                                         
                                         <td>
                                             <button type="button"  class="btn btn-info btn-fill" (click)="ver(reserve.idHouse)">Ver Casa</button>
                                         </td>
                                         <td>
-                                            <button type="button"  class="btn btn-default btn-fill" (click)="eliminar(reserve.idReserve)">Cancelar Reserva</button>
+                                            <button type="button"  class="btn btn-default btn-fill" *ngIf="this.reserve.notaHost==0" (click)="eliminar(reserve.idReserve)">Cancelar Reserva</button>
                                         </td>
                                         <td>    
-                                            <button type="button" class="btn btn-success btn-fill" *ngIf="reserve.notaGuest==0" [routerLink]="['/rate', reserve.idReserve]" >Calificar Casa</button>
+                                            <button type="button" class="btn btn-success btn-fill" *ngIf="reserve.notaHost==0" [routerLink]="['/rate', reserve.idReserve]" >Calificar Casa</button>
                                         </td> 
                                            
                                              

@@ -2,6 +2,7 @@ package com.ias.backend.repository;
 
 import com.ias.backend.domain.RatingHouse;
 
+
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -11,5 +12,6 @@ public interface RatingHouseRepository extends CrudRepository<RatingHouse, Integ
     RatingHouse findByidHouse(String idHouse);
 
     RatingHouse findByidReserve(int idReserve);
+
     
 }

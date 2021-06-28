@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Reserve } from 'app/reserve/reserve';
 import { LoginService } from 'app/shared/services/login.service';
+import { title } from 'process';
 import Swal from 'sweetalert2';
 import { Rate } from './rate';
 
@@ -18,18 +19,19 @@ import { Rate } from './rate';
 export class RateComponent implements OnInit {
    public  rate: Rate = new Rate()
    public  reserve: Reserve = new Reserve()
-  public tittle:string="Califica tu Huesped Guest"
+  tittle: any;
   comentarioGuest: any;
   idGuest: any;
   photoExpGuest: any;
   note: any;
- 
+  idLogin=this.service.user.id
   constructor(private service: LoginService, private activatedRoute: ActivatedRoute, private router: Router) { }
   
 
   ngOnInit(): void {
     this.cargarIdReserve();
     this.cargarIdHouse();
+  
   }
 
 
@@ -43,6 +45,7 @@ export class RateComponent implements OnInit {
 
     
        }
+       
 
     })
   }   
@@ -51,6 +54,12 @@ export class RateComponent implements OnInit {
     this.service.getReservebyIdReserve(this.rate.idReserve).subscribe(data => {
       this.reserve=data
       this.rate.idHouse=this.reserve.idHouse
+      if(this.reserve.usernameHost==this.service.user.username){
+        this.tittle="Califica tu Huesped"
+      }
+      else{
+        this.tittle="Califica la casa visitada"
+      }
      
     })
   }
@@ -71,13 +80,20 @@ export class RateComponent implements OnInit {
     Swal.fire({
       position: 'top-end',
       icon: 'success',
-      title: 'Calificacion de Casa Host realizada correctamente',
+      title: 'Califica tu experiencia',
       showConfirmButton: false,
       timer: 1500
     });
     this.service.getReservebyIdReserve(this.rate.idReserve).subscribe(data => {
-      console.log(data);})
+      console.log(data);
+      this.reserve=data})
+      if(this.reserve.usernameHost==this.service.user.username){
       this.reserve.notaGuest=this.rate.note
+      
+      }
+      else{
+        this.reserve.notaHost=this.rate.note 
+      }
     this.service.updateReserve(this.reserve).subscribe(data => {
       console.log(data);
       this.reserve=data
