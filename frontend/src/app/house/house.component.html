@@ -1,4 +1,4 @@
-<div class="main-content" >
+<div class="main-content">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6">
@@ -8,34 +8,42 @@
                     </div>
                     <div class="content">
                         <form>
-                            <input type="text" class="form-control invisible"  id="username" name="username" [(ngModel)]="house.username" required>
-                            <input type="text" class="form-control invisible"  id="idHouse" name="idHouse" [(ngModel)]="house.idHouse" required>
-                            <div class="row">    
-                                    <div class="col-md-3 form-row align-items-center">
-                                        <label for="available">Disponibilidad</label>
-                                        <select class="form-control" id="available" name="available"  [(ngModel)]="house.available" >
-                                            <option value=1>Publicada</option>
-                                            <option value=0>No publicada</option>
-                                        </select>
+                            <input type="text" class="form-control invisible" id="username" name="username"
+                                [(ngModel)]="house.username" required>
+                            <input type="text" class="form-control invisible" id="idHouse" name="idHouse"
+                                [(ngModel)]="house.idHouse" required>
+                            <div class="row">
+                                <div class="col-md-3 form-row align-items-center">
+                                    <label for="available">Disponibilidad</label>
+                                    <select class="form-control" id="available" name="available"
+                                        [(ngModel)]="house.available">
+                                        <option value=1>Publicada</option>
+                                        <option value=0>No publicada</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label>Telefono de Contacto</label>
+                                        <input type="text" class="form-control" placeholder="Telefono de Contacto"
+                                            id="phoneHost" name="phoneHost" [(ngModel)]="house.phoneHost" required><br>
                                     </div>
-                                    <div class="col-md-5">
-                                        <div class="form-group">
-                                             <label>Telefono de Contacto</label>
-                                             <input type="text" class="form-control" placeholder="Telefono de Contacto" id="phoneHost" name="phoneHost" [(ngModel)]="house.phoneHost" required><br>
-                                         </div>
-                                     </div>
+                                </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>País</label>
-                                        <input type="text" placeholder="Pais" class="form-control" disabled id="houseCountry" name="houseCountry" [(ngModel)]="house.houseCountry" required><br><br>
+                                        <input type="text" placeholder="Pais" class="form-control" disabled
+                                            id="houseCountry" name="houseCountry" [(ngModel)]="house.houseCountry"
+                                            required><br><br>
                                     </div>
-                                </div>    
+                                </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Ciudad</label>
-                                        <input type="text" placeholder="Ciudad" class="form-control" disabled id="houseCity" name="houseCity" [(ngModel)]="house.houseCity" required><br><br>
+                                        <input type="text" placeholder="Ciudad" class="form-control" disabled
+                                            id="houseCity" name="houseCity" [(ngModel)]="house.houseCity"
+                                            required><br><br>
                                     </div>
                                 </div>
                             </div>
@@ -43,28 +51,31 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Direccion</label>
-                                        <input type="text" placeholder="Direccion" class="form-control" disabled id="houseAdress" name="houseAddress" [(ngModel)]="house.houseAddress"><br><br>
-                                    </div>  
+                                        <input type="text" placeholder="Direccion" class="form-control" disabled
+                                            id="houseAdress" name="houseAddress"
+                                            [(ngModel)]="house.houseAddress"><br><br>
+                                    </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Foto</label>
-                                        <input type="text" placeholder="URL Foto" class="form-control" id="photo" name="photo" [(ngModel)]="house.photo"><br><br>
+                                        <input type="text" placeholder="URL Foto" class="form-control" id="photo"
+                                            name="photo" [(ngModel)]="house.photo"><br><br>
                                     </div>
                                 </div>
                             </div>
-                           <!--<a class="btn btn-primary btn-md btn-fill" role="button" aria-pressed="true"  (click)="public()">Publicar mi Casa</a>
-                            <a class="btn btn-sucess btn-md btn-fill" role="button" aria-pressed="true" (click)="uploadHouse()">Actualizar Datos</a>
-                           -->
-                           <button type="submit" class="btn btn-info btn-fill" (click)="public()" *ngIf="!house.idHouse else elseBlock">Publicar Casa</button> 
-                           <ng-template #elseBlock>
-                            <button type="button" class="btn btn-info btn-fill" (click)="uploadHouse()">Actualizar Casa</button>
-                           </ng-template>
-                           
-                           
-                           
+
+                            <button type="submit" class="btn btn-info btn-fill" (click)="public()"
+                                *ngIf="!house.idHouse else elseBlock">Publicar Casa</button>
+                            <ng-template #elseBlock>
+                                <button type="button" class="btn btn-info btn-fill" (click)="uploadHouse()">Actualizar
+                                    Casa</button>
+                            </ng-template>
+
+
+
                         </form>
                     </div>
                 </div>
@@ -73,54 +84,8 @@
                 <div class="card card-user">
                     <div class="imagen">
                         <img src="{{house.photo}}" alt="">
-                     </div>
+                    </div>
                 </div>
             </div>
         </div>
-</div>
-
-<!--<div>
-    
-    <div class="body"></div>
-    <div class="grad"></div>
-    <div class="header">
-        
-        <div>TRIP<span>HOST</span></div>
-      
-        
-        
     </div>
-    <br>
-    <div class="login">
-        <div>
-            <h3 style="color: white;">Información para publicar tu casa como Host</h3>
-        </div>
-        <div><img src="{{house.photo}}" style="width: 200px; height: 200px;" alt=""></div>
-        <div class="col-auto form-row align-items-center">
-            <select class="form-control" id="available" name="available"  [(ngModel)]="house.available" >
-                <option value=1>Disponible</option>
-                <option value=0>Ocupada</option>
-            </select>
-        </div>-->
-       <!-- <input type="text" class="form-control invisible" value="{{username}}" id="username" name="username" [(ngModel)]="username" required>
-        <input type="text" class="form-control invisible" value="{{idHouse}}" id="idHouse" name="idHouse" [(ngModel)]="idHouse" required>-->
-         
-        <!--<input type="text" class="form-control invisible"  id="username" name="username" [(ngModel)]="house.username" required>
-        <input type="text" class="form-control invisible"  id="idHouse" name="idHouse" [(ngModel)]="house.idHouse" required>-->
-       <!-- <input type="text" placeholder="Telefono de Contacto" id="phoneHost" name="phoneHost" [(ngModel)]="phoneHost" required><br>
-        <input type="text" placeholder="Pais" id="houseCountry" name="houseCountry" [(ngModel)]="houseCountry" required><br><br>
-        <input type="text" placeholder="Ciudad" id="houseCity" name="houseCity" [(ngModel)]="houseCity" required><br><br>
-        <input type="text" placeholder="Direccion" id="houseAdress" name="houseAddress" [(ngModel)]="houseAddress"><br><br>
-        <input type="text" placeholder="URL Foto" id="photo" name="photo" [(ngModel)]="photo"><br><br>-->
-        
-                                   
-      <!--  <input type="text" placeholder="Telefono de Contacto" id="phoneHost" name="phoneHost" [(ngModel)]="house.phoneHost" required><br>
-        <input type="text" placeholder="Pais" disabled id="houseCountry" name="houseCountry" [(ngModel)]="house.houseCountry" required><br><br>
-        <input type="text" placeholder="Ciudad" disabled id="houseCity" name="houseCity" [(ngModel)]="house.houseCity" required><br><br>
-        <input type="text" placeholder="Direccion" disabled id="houseAdress" name="houseAddress" [(ngModel)]="house.houseAddress"><br><br>
-        <input type="text" placeholder="URL Foto" id="photo" name="photo" [(ngModel)]="house.photo"><br><br>
-        <a class="btn btn-primary btn-md btn-fill" role="button" aria-pressed="true"  (click)="public()">Publicar mi Casa</a>
-        <a class="btn btn-sucess btn-md btn-fill" role="button" aria-pressed="true" (click)="uploadHouse()">Actualizar Datos</a>
-     
-     </div>
-    -->

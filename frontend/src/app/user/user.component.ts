@@ -1,29 +1,29 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Guest } from 'app/guest/guest';
 import { LoginService } from 'app/shared/services/login.service';
 import Swal from 'sweetalert2';
-import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-user',
-  templateUrl: './user.component.html',
-  styleUrls: ['./user.component.css']
+  templateUrl: './user.component.html'
+ 
 })
 
 export class UserComponent implements OnInit {
   public  user: Guest = new Guest()
 
-constructor(private service: LoginService, private activatedRoute: ActivatedRoute) { }
+constructor(private service: LoginService) { }
 
   ngOnInit() {
     let recuperarStorage = JSON.parse( localStorage.getItem("datosSesion"));
     this.user=recuperarStorage;
-    //this.user=this.service.user
     }
     
    
 
   update() {
+    if(this.user.name&&this.user.password&&this.user.userCity&&this.user.userCountry&&this.user.address&&this.user.rol){
     this.service.updateUser(this.user).subscribe(data => {
         console.log(data);
       }, error => alert(error));
@@ -37,5 +37,16 @@ constructor(private service: LoginService, private activatedRoute: ActivatedRout
       let recuperarStorage = JSON.parse( localStorage.getItem("datosSesion"));
       recuperarStorage=this.user;
       localStorage.setItem("datosSesion", JSON.stringify(recuperarStorage));
- }  
+ 
+    }
+    else{
+      Swal.fire({
+        position: 'top-end',
+        icon: 'error',
+        title: 'Validar campos vacios',
+        showConfirmButton: false,
+        timer: 1500
+      });
+    }
+  }  
 }

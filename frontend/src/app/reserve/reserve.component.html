@@ -1,4 +1,4 @@
-<div class="main-content" >
+<div class="main-content">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-4">
@@ -8,7 +8,7 @@
                     </div>
                     <div class="content">
                         <form>
-                            <div class="align-center"> 
+                            <div class="align-center">
                                 <h5>Datos Contacto Host</h5>
                             </div>
                             <div class="row">
@@ -16,47 +16,55 @@
                                     <div class="form-group">
                                         <div>
                                             <label for="">Nombre Host</label>
-                                     <input type="text" class="form-control" disabled  id="usernameHost" name="usernameHost" [(ngModel)]="house.username">
-                                         
+                                            <input type="text" class="form-control" disabled id="usernameHost"
+                                                name="usernameHost" [(ngModel)]="house.username">
+
                                         </div>
                                     </div>
-                                </div>    
-                                <div class="col-md-3">
-                                 <input type="text" class="invisible" disabled  id="usernameGuest" name="usernameGuest" [(ngModel)]="usernameGuest">
-                               
                                 </div>
                                 <div class="col-md-3">
-                                <input type="number" class="invisible" disabled  id="idHouse" name="idHouse" [(ngModel)]="house.idHouse">
-                               
+                                    <input type="text" class="invisible" disabled id="usernameGuest"
+                                        name="usernameGuest" [(ngModel)]="usernameGuest">
+
                                 </div>
-                                   
+                                <div class="col-md-3">
+                                    <input type="number" class="invisible" disabled id="idHouse" name="idHouse"
+                                        [(ngModel)]="house.idHouse">
+
+                                </div>
+
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                   <div class="form-group">
+                                    <div class="form-group">
                                         <label>Telefono de contacto</label>
-                                    <input type="number" class="form-control" disabled  id="phoneHost" name="phoneHost" [(ngModel)]="house.phoneHost">
-                                    <a class="fadeIn fourth" type="button" target="_blank" [href]="'https://api.whatsapp.com/send?phone=+57'+house.phoneHost" > Contactar</a>
+                                        <input type="number" class="form-control" disabled id="phoneHost"
+                                            name="phoneHost" [(ngModel)]="house.phoneHost">
+                                        <a class="fadeIn fourth" type="button" target="_blank"
+                                            [href]="'https://api.whatsapp.com/send?phone=+57'+house.phoneHost">
+                                            Contactar</a>
                                     </div>
-                                </div>    
+                                </div>
                             </div>
 
                             <div class="row">
                                 <div class="col-md-12">
-                                   <div class="form-group">
+                                    <div class="form-group">
                                         <label>Pais</label>
-                                   <input type="text" class="form-control" disabled  id="houseCountry" name="houseCountry" [(ngModel)]="house.houseCountry">
-                                   
+                                        <input type="text" class="form-control" disabled id="houseCountry"
+                                            name="houseCountry" [(ngModel)]="house.houseCountry">
+
                                     </div>
-                                </div>    
+                                </div>
                             </div>
 
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Ciudad</label>
-                                          <input type="text" class="form-control" disabled  id="houseCity" name="houseCity" [(ngModel)]="house.houseCity">
-                                        
+                                        <input type="text" class="form-control" disabled id="houseCity" name="houseCity"
+                                            [(ngModel)]="house.houseCity">
+
                                     </div>
                                 </div>
                             </div>
@@ -64,52 +72,57 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Direccion</label>
-                                        <input type="text" class="form-control" disabled  id="houseAddress" name="houseAddress" [(ngModel)]="house.houseAddress" required >
-                                   
+                                        <input type="text" class="form-control" disabled id="houseAddress"
+                                            name="houseAddress" [(ngModel)]="house.houseAddress" required>
+
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6 ">
-                                    <a routerLink="/admin/dashboard" class="btn btn-default btn-fill" role="button"  >Cancelar</a> 
+                                    <a routerLink="/admin/dashboard" class="btn btn-default btn-fill"
+                                        role="button">Cancelar</a>
                                 </div>
                                 <div class="col-md-6">
-                                    <button type="submit" class="btn btn-info btn-fill " (click)="createReserveHouse()">Reservar</button>
+                                    <button type="submit" class="btn btn-info btn-fill "
+                                        (click)="createReserveHouse()">Reservar</button>
                                 </div>
                             </div>
-                       </form>
+                        </form>
                     </div>
                 </div>
             </div>
-        
-         <div class="col-md-8">
-            <div class="card ml-2">
-                <br>
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label>Fecha Inicial</label>
-                            <input type="date" class="form-control" id="fechaInit" name="fechaInit" [(ngModel)]="fechaInit" required >
+
+            <div class="col-md-8">
+                <div class="card ml-2">
+                    <br>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label>Fecha Inicial</label>
+                                <input type="date" class="form-control" id="fechaInit" name="fechaInit"
+                                    [(ngModel)]="fechaInit" required>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label>Fecha Final</label>
+                                <input type="date" class="form-control" id="fechaEnd" name="fechaEnd"
+                                    [(ngModel)]="fechaEnd" required>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-3">  
-                        <div class="form-group">
-                            <label>Fecha Final</label>
-                            <input type="date" class="form-control" id="fechaEnd" name="fechaEnd" [(ngModel)]="fechaEnd" required >
-                        </div>
+                    <div>
+                        <img class="imagen" src="{{house.photo}}" alt="">
                     </div>
+
+
+                    <div>
+                        <a routerLink="/admin/maps" class="btn btn-warning btn-fill pull-right" role="button">Ver
+                            ubicación</a>
+                    </div>
+
                 </div>
-                <div>
-                    <img class="imagen" src="{{house.photo}}" alt="">
-                </div>
-               
-                
-                <div>
-                    <a routerLink="/admin/maps" class="btn btn-warning btn-fill pull-right" role="button" >Ver ubicación</a> 
-                </div>
-            
             </div>
         </div>
     </div>
-</div>
-

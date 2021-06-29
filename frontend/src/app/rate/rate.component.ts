@@ -3,24 +3,22 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Guest } from 'app/guest/guest';
 import { Reserve } from 'app/reserve/reserve';
 import { LoginService } from 'app/shared/services/login.service';
-import { title } from 'process';
+
 import Swal from 'sweetalert2';
 import { Rate } from './rate';
 
 @Component({
   selector: 'app-rate',
-  templateUrl: './rate.component.html',
-  styleUrls: ['./rate.component.css' ] 
-  
-
-
-  
-  
+  templateUrl: './rate.component.html'
+   
 })
+
+
 export class RateComponent implements OnInit {
    public  rate: Rate = new Rate()
    public  user: Guest = new Guest()
    public  reserve: Reserve = new Reserve()
+   recuperarStorage = JSON.parse( localStorage.getItem("datosSesion"))
   tittle: any;
   comentarioGuest: any;
   idGuest: any;
@@ -56,9 +54,9 @@ export class RateComponent implements OnInit {
     this.service.getReservebyIdReserve(this.rate.idReserve).subscribe(data => {
       this.reserve=data
       this.rate.idHouse=this.reserve.idHouse
-      let recuperarStorage = JSON.parse( localStorage.getItem("datosSesion"));
-      this.user=recuperarStorage;
-      if(this.reserve.usernameHost==recuperarStorage.username){
+      ;
+      this.user=this.recuperarStorage;
+      if(this.reserve.usernameHost==this.recuperarStorage.username){
         this.tittle="Califica tu Huesped"
       }
       else{
@@ -70,8 +68,9 @@ export class RateComponent implements OnInit {
    
 
   calificar(){
-   console.log('este es el usuario que califica´'+this.service.user.id)
-    this.rate.idGuest=this.service.user.id;
+    if(this.comentarioGuest&&this.photoExpGuest&&this.note){
+   
+    this.rate.idGuest=this.recuperarStorage.id;
     this.rate.commentGuest=this.comentarioGuest;
     this.rate.photoExp=this.photoExpGuest;
     this.rate.note=this.note
@@ -106,7 +105,16 @@ export class RateComponent implements OnInit {
       console.log("este es la actualizacion de la reserva "+this.reserve)
     })
     this.router.navigate(['/admin/table']);
-
+  }
+  else{
+    Swal.fire({
+      position: 'top-end',
+      icon: 'error',
+      title: 'Todos los campos deben estar completos',
+      showConfirmButton: false,
+      timer: 1500
+    });
+  }
 
   }
 

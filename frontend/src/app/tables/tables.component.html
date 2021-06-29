@@ -1,5 +1,3 @@
-
-
 <div class="main-content">
     <div class="container-fluid">
         <div class="row">
@@ -13,46 +11,48 @@
                         <div *ngIf="reserves?.length==0" class="alert alert-info">
                             No tienes lugares reservados.
                         </div>
-                          <table class="table table-hover table-striped" *ngIf="reserves?.length>0">
-                                <thead>
-                                    <tr>
-                                        <th>Id Reserva</th>
-                                        <th>Usuario Host</th>
-                                        <th>Codigo Casa</th>
-                                        <th>Fecha Inicial</th>
-                                        <th>Fecha Final</th>
-                                        <th>Tu Calificacion Casa</th>
-                                        <th>Acciones</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr *ngFor="let reserve of reserves">
-                                        <td>{{reserve.idReserve}}</td>
-                                        <td>{{reserve.usernameHost}}</td>
-                                        <td>{{reserve.idHouse}}</td>
-                                        <td>{{reserve.fechaInit}}</td>
-                                        <td>{{reserve.fechaEnd}}</td>
-                                        <td>{{reserve.notaHost}}</td>
-                                
-                                        
-                                        <td>
-                                            <button type="button"  class="btn btn-info btn-fill" (click)="ver(reserve.idHouse)">Ver Casa</button>
-                                        </td>
-                                        <td>
-                                            <button type="button"  class="btn btn-default btn-fill" *ngIf="this.reserve.notaHost==0" (click)="eliminar(reserve.idReserve)">Cancelar Reserva</button>
-                                        </td>
-                                        <td>    
-                                            <button type="button" class="btn btn-success btn-fill" *ngIf="reserve.notaHost==0" [routerLink]="['/rate', reserve.idReserve]" >Calificar Casa</button>
-                                        </td> 
-                                           
-                                             
-                                            <!--<button type="button" class="btn btn-success btn-fill" (click)="calificar(reserve.usernameHost)">Calificar Host</button>
-                                             <bar-rating [max]="5" [(rate)]="currentRate" [readOnly]="false"></bar-rating>
-                                        </td>     
-                                            -->
-                                    </tr>
-                                </tbody>
-                          </table>
+                        <table class="table table-hover table-striped" *ngIf="reserves?.length>0">
+                            <thead>
+                                <tr>
+                                    <th>Id Reserva</th>
+                                    <th>Usuario Host</th>
+                                    <th>Codigo Casa</th>
+                                    <th>Fecha Inicial</th>
+                                    <th>Fecha Final</th>
+                                    <th>Tu Calificacion Casa</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let reserve of reserves">
+                                    <td>{{reserve.idReserve}}</td>
+                                    <td>{{reserve.usernameHost}}</td>
+                                    <td>{{reserve.idHouse}}</td>
+                                    <td>{{reserve.fechaInit}}</td>
+                                    <td>{{reserve.fechaEnd}}</td>
+                                    <td>{{reserve.notaHost}}</td>
+
+
+                                    <td>
+                                        <button type="button" class="btn btn-info btn-fill"
+                                            (click)="ver(reserve.idHouse)">Ver Casa</button>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-default btn-fill"
+                                            *ngIf="this.reserve.notaHost==0"
+                                            (click)="eliminar(reserve.idReserve)">Cancelar Reserva</button>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-success btn-fill"
+                                            *ngIf="reserve.notaHost==0"
+                                            [routerLink]="['/rate', reserve.idReserve]">Calificar Casa</button>
+                                    </td>
+
+
+
+                                </tr>
+                            </tbody>
+                        </table>
 
                     </div>
                 </div>

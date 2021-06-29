@@ -15,18 +15,21 @@ public class User {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
      private int id;
-    
+    @Column(nullable=false, unique=true)
     private String username;
+    @Column(nullable=false) 
     private String password;
+    @Column(nullable=false) 
     private String name;
 
-    @Column(name="user_country")
+    @Column(name="user_country", nullable=false)
     private String userCountry;
 
-    @Column(name="user_city")
+    @Column(name="user_city", nullable=false)
     private String userCity;
-    
+    @Column(nullable=false) 
     private String address;
+    @Column(nullable=false) 
     private int rol;
     
   

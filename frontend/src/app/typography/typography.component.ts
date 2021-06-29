@@ -1,4 +1,3 @@
-import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Guest } from 'app/guest/guest';
@@ -9,8 +8,7 @@ import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-typography',
-  templateUrl: './typography.component.html',
-  styleUrls: ['./typography.component.css']
+  templateUrl: './typography.component.html'
 })
 export class TypographyComponent implements OnInit {
     reserves: any;

@@ -17,12 +17,7 @@ export const ROUTESGUEST: RouteInfo[] = [
     { path: '/admin/dashboard', title: 'Bienvenido Portal GUEST',  icon: 'pe-7s-home', class: '' },
     { path: '/admin/user/', title: 'Tu Perfil',  icon:'pe-7s-id', class: '' },
     { path: '/admin/table', title: 'Historial de Viajes como Guest',  icon:'pe-7s-note2', class: '' },
-    //{ path: '/admin/typography', title: 'Typography',  icon:'pe-7s-news-paper', class: '' },
-    //{ path: '/admin/icons', title: 'Icons',  icon:'pe-7s-science', class: '' },
-   // { path: '/admin/maps', title: 'Ubicación',  icon:'pe-7s-map-marker', class: '' },
-    //{ path: '/admin/notifications', title: 'Notifications',  icon:'pe-7s-bell', class: '' },
-    //{ path: '/admin/calculadora', title: 'Calculadora',  icon:'pe-7s-calculator', class: '' },
-   // { path: 'house', title: 'Quiero Ofrecer mi casa',  icon:'pe-7s-rocket', class: 'active-pro' },
+   
 ];
 
 export const ROUTESHOST: RouteInfo[] = [
@@ -30,14 +25,12 @@ export const ROUTESHOST: RouteInfo[] = [
   { path: '/admin/user/', title: 'Tu Perfil',  icon:'pe-7s-id', class: '' },
   { path: '/admin/typography', title: 'Historial de Reservas como Host',  icon:'pe-7s-news-paper', class: '' },
   //{ path: '/admin/maps', title: 'Ubicación',  icon:'pe-7s-map-marker', class: '' },
-  
   { path: 'house', title: 'Quiero Ofrecer mi casa',  icon:'pe-7s-rocket', class: 'active-pro' },
 
 ]
 
 export const ROUTES: RouteInfo[] = [
   { path: '/admin/dashboard', title: 'Bienvenido Portal FULL    Buscar',  icon: 'pe-7s-home', class: '' },
- // { path: '/admin/dashboard', title: 'Buscar',  icon: 'pe-7s-home', class: '' },
   { path: '/admin/user/', title: 'Tu Perfil',  icon:'pe-7s-id', class: '' },
   { path: '/admin/table', title: 'Historial de Viajes como Guest',  icon:'pe-7s-note2', class: '' },
   { path: '/admin/typography', title: 'Historial de Reservas como Host',  icon:'pe-7s-news-paper', class: '' },
@@ -64,13 +57,6 @@ export class SidebarComponent implements OnInit {
       this.usuarioLogueado = loggedStatus;
     })
     
-    /*let respuesta;
-    let username = this.service.usernameLogin
-    let password = this.service.password;
-    this.service.getLogin(username, password).subscribe(data => {
-      respuesta=data;
-      var usuario: Guest;
-      usuario=respuesta;*/
       let recuperarStorage = JSON.parse( localStorage.getItem("datosSesion"));
       this.user=recuperarStorage;
       if(this.user.rol==1){

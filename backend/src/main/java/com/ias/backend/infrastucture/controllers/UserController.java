@@ -22,11 +22,30 @@ public class UserController {
     public UserController(UserRepository _userRepository){
         this.userRepository = _userRepository;
     }
+
     @PostMapping("/create")
-    public ResponseEntity<User> saveUser(@RequestBody User user){
+    public ResponseEntity<?> create(@RequestBody User user){
+        User userNew = null;
+        Map<String, Object> response = new HashMap<>();
+
+        try{
+            userNew = userRepository.save(user);
+        } catch(DataAccessException e){
+            response.put("mensaje", "Error al realizar la creacion del cliente en la base de datos");
+            response.put("error", e.getMessage().concat(":").concat(e.getMostSpecificCause().getMessage()));
+            return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+
+        response.put("mensaje", "El cliente ha sido creado con exito");
+        response.put("user", userNew);
+       
+
         
-        return new ResponseEntity<User>(userRepository.save(user), HttpStatus.CREATED);
+      
+        
+        return new ResponseEntity<Map<String, Object>>(response, HttpStatus.CREATED);
     }
+    
 
     @GetMapping
      public ResponseEntity<Iterable<User>> getAllUser(){

@@ -1,4 +1,3 @@
-import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Guest } from 'app/guest/guest';
@@ -9,8 +8,8 @@ import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-tables',
-  templateUrl: './tables.component.html',
-  styleUrls: ['./tables.component.css']
+  templateUrl: './tables.component.html'
+
 })
 export class TablesComponent implements OnInit {
   public  user: Guest = new Guest()
@@ -38,11 +37,7 @@ export class TablesComponent implements OnInit {
     this.service.getIdHouse(idHouse1)
     this.router.navigate(['/admin/reserve/'+idHouse1]);
   }
-  /*calificaR(idHouse1){
-    console.log('este es el id house cuando hago click es : '+idHouse1)
-    this.service.getIdHouse(idHouse1)
-    this.router.navigate(['/admin/reserve/'+idHouse1]);
-  }*/
+ 
   eliminar(idReserve1){
     Swal.fire({
       title: '¿Estás seguro de eliminar la reserva?',
