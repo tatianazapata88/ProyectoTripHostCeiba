@@ -17,19 +17,19 @@ import javax.persistence.TemporalType;
 public class RatingHouse {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    @Column(name="id_rating")
+    @Column(name="id_rating", nullable=false)
     private int idRating;
 
-    @Column(name="id_reserve")
+    @Column(name="id_reserve", nullable=false)
     private int idReserve;
 
-    @Column(name="id_house")
+    @Column(name="id_house", nullable=false)
     private int idHouse;
 
-    @Column(name="id_guest")
+    @Column(name="id_guest", nullable=false)
     private int idGuest;
 
-    @Column(name="fecha_rating")
+    @Column(name="fecha_rating", nullable=false)
     @Temporal(TemporalType.DATE)
     private Date fechaRating;
 
@@ -38,10 +38,10 @@ public class RatingHouse {
         fechaRating = new Date();
     }
 
-    @Column(name="comment_guest")
+    @Column(name="comment_guest", nullable=false)
     private String commentGuest;
 
-    @Column(name="photo_exp")
+    @Column(name="photo_exp", nullable=false)
     private String photoExp;
 
     @Column

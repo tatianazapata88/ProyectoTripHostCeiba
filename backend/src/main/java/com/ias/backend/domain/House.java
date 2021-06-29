@@ -15,18 +15,19 @@ public class House {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name="id_house")
     private int idHouse;
-
+    @Column(nullable=false)
     private String username;
-    @Column(name="phone_host")
+    @Column(name="phone_host", nullable=false )
     private String phoneHost;
-    @Column(name="house_country")
+    @Column(name="house_country", nullable=false)
     private String houseCountry;
-    @Column(name="house_city")
+    @Column(name="house_city", nullable=false)
     private String houseCity;
-    @Column(name="house_address")
+    @Column(name="house_address", nullable=false)
     private String houseAddress;
-    
+    @Column(nullable=false)
     private int available;
+    @Column(nullable=false)
     private String photo;
    
     

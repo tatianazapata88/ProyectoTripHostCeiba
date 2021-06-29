@@ -61,7 +61,8 @@ public class UserController {
     public ResponseEntity<User> getUserByUsername(@PathVariable String username) {
         return new ResponseEntity<User>(userRepository.findByUsername(username), HttpStatus.ACCEPTED);
     }
- // holi
+
+    
     @GetMapping("/login/{username}/{password}")
     public ResponseEntity<?> show(@PathVariable String username, @PathVariable String password) {
 

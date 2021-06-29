@@ -59,20 +59,5 @@ public class HouseController {
          return new ResponseEntity<House>(houseRepository.findById(idHouse), HttpStatus.ACCEPTED);
      }
 
-   /*@GetMapping
-    @RequestMapping("/search")
-      
-    public ResponseEntity<Iterable<House>> getHouses(){
-        return new ResponseEntity<Iterable<House>>(houseRepository.findAll(), HttpStatus.ACCEPTED);
-    }*/
-
-
- // holi
-  /*  @GetMapping
-    @RequestMapping("/login")
-    public ResponseEntity<User> getUserByUsernameAndPasword(String username,String password) {
-        
-        return new ResponseEntity<User>(userRepository.findByUsernameAndPassword(username,password), HttpStatus.ACCEPTED);
-    }
-*/    
+       
 }

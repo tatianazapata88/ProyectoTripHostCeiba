@@ -28,7 +28,7 @@ public class ReserveController {
     }
 
     
-   // @PostMapping ("/save")
+  
     @PostMapping("/reserveHouse")
 
       public ResponseEntity<Reserve> saveReserve(@RequestBody Reserve reserve){
@@ -36,7 +36,7 @@ public class ReserveController {
 
     }
 
-    //@GetMapping("/list")
+  
     @GetMapping(value="/listReserve")
 
      public ResponseEntity<Iterable<Reserve>> getAllReserve(){
